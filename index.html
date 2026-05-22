@@ -159,6 +159,18 @@
   .map{aspect-ratio:21/9;border-radius:18px;overflow:hidden;margin-top:24px;border:1px solid rgba(255,255,255,.18)}
   .map iframe{width:100%;height:100%;border:0;filter:grayscale(.15)}
 
+  /* FAQ */
+  .faq{background:var(--wash)}
+  .faq-list{max-width:780px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+  .faq-item{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:border-color .25s,box-shadow .25s}
+  .faq-item[open]{border-color:var(--blue-soft);box-shadow:var(--shadow-sm)}
+  .faq-item summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 24px;font-family:'Fraunces',Georgia,serif;font-size:1.08rem;font-weight:500;color:var(--blue-deep)}
+  .faq-item summary::-webkit-details-marker{display:none}
+  .faq-item summary .q-ico{flex-shrink:0;width:22px;height:22px;border-radius:50%;border:1.5px solid var(--blue-soft);display:flex;align-items:center;justify-content:center;color:var(--blue);transition:transform .25s,background .25s}
+  .faq-item summary .q-ico svg{width:13px;height:13px}
+  .faq-item[open] summary .q-ico{transform:rotate(45deg);background:var(--wash2)}
+  .faq-item .faq-body{padding:0 24px 22px;color:var(--slate);font-size:.96rem}
+
   /* FOOTER */
   footer{background:var(--foot);color:#dce8f2;padding:54px 0 30px}
   .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:36px}
@@ -207,6 +219,7 @@
       <a href="#why">Independent</a>
       <a href="#membership">Membership</a>
       <a href="#reviews">Patients</a>
+      <a href="#faq">FAQ</a>
       <a href="#contact" class="btn">Join the Waiting List</a>
     </nav>
     <button class="menu-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
@@ -422,6 +435,55 @@
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section class="pad faq" id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Common questions</div>
+        <h2>What patients ask us most</h2>
+        <p>A few of the things people most often want to know before they get in touch with the practice.</p>
+      </div>
+      <div class="faq-list">
+
+        <details class="faq-item">
+          <summary>Is Gentle Dental Care private or NHS?<span class="q-ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span></summary>
+          <div class="faq-body">The practice is fully private and independently owned. It is not part of any NHS contract or corporate dental group, so your care is planned around you rather than around a quota.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Are you accepting new patients?<span class="q-ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span></summary>
+          <div class="faq-body">To be honest with you, the practice is currently full and is running a waiting list for new patients. You are welcome to register your interest using the form below, and the team will be in touch when a space opens up. Joining the list does not book an appointment.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What is the membership plan?<span class="q-ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span></summary>
+          <div class="faq-body">The practice offers a range of membership plans that let you spread the cost of routine care across the year as one predictable monthly payment. Plans typically include your routine examinations and hygiene appointments. Ask the team and they will talk you through which plan suits you.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Do you offer Invisalign, cosmetic dentistry or implants?<span class="q-ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span></summary>
+          <div class="faq-body">Yes. Alongside general and family dentistry, the practice provides clear aligner teeth-straightening, cosmetic treatments such as composite bonding, veneers and whitening, and single, multiple or full-arch dental implants. Your dentist will discuss the options that are suitable for you before any treatment begins.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Where are you located?<span class="q-ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span></summary>
+          <div class="faq-body">You will find the practice at 85 South Street, St Andrews, Fife, KY16 9QW, in the heart of the town. There is a map further down this page to help you find your way.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What does "independent" mean for my care?<span class="q-ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span></summary>
+          <div class="faq-body">It means the practice answers to its patients, not to a head office or shareholders. There are no corporate sales targets, you tend to see the same familiar team who know your history, and treatment is recommended because it is right for you. The practice is privately owned and led by Dr Chris Pritchard.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary>How do I get in touch?<span class="q-ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span></summary>
+          <div class="faq-body">You can call the practice on 01334 475 433, email info@standrewsdentist.co.uk, or fill in the waiting-list form below. The team is happy to answer any questions you have about treatments or membership.</div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section class="pad contact" id="contact">
     <div class="wrap">
@@ -438,7 +500,7 @@
           </div>
           <div class="info-row">
             <div class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 005 5L19 13l5 2v3c0 1.1-.9 2-2 2A15 15 0 013 6c0-1.1.9-2 2-2z" fill="#82b2dd" stroke="#fff" stroke-width="1.1" stroke-linejoin="round"/></svg></div>
-            <div><h4>Call</h4><a href="tel:01334475433">01334 475 433</a></div>
+            <div><h4>Call</h4><a href="tel:+441334475433">01334 475 433</a></div>
           </div>
           <div class="info-row">
             <div class="ico"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2.5" fill="#82b2dd" stroke="#fff" stroke-width="1.1"/><path d="M4 7l8 5.5L20 7" stroke="#fff" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
@@ -564,6 +626,70 @@
     "name":"Dr Chris Pritchard",
     "jobTitle":"Principal Dentist"
   }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"Is Gentle Dental Care private or NHS?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"The practice is fully private and independently owned. It is not part of any NHS contract or corporate dental group, so your care is planned around you rather than around a quota."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Are you accepting new patients?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"To be honest with you, the practice is currently full and is running a waiting list for new patients. You are welcome to register your interest using the form on the page, and the team will be in touch when a space opens up. Joining the list does not book an appointment."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"What is the membership plan?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"The practice offers a range of membership plans that let you spread the cost of routine care across the year as one predictable monthly payment. Plans typically include your routine examinations and hygiene appointments. Ask the team and they will talk you through which plan suits you."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Do you offer Invisalign, cosmetic dentistry or implants?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Yes. Alongside general and family dentistry, the practice provides clear aligner teeth-straightening, cosmetic treatments such as composite bonding, veneers and whitening, and single, multiple or full-arch dental implants. Your dentist will discuss the options that are suitable for you before any treatment begins."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Where are you located?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"You will find the practice at 85 South Street, St Andrews, Fife, KY16 9QW, in the heart of the town. There is a map on the page to help you find your way."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"What does independent mean for my care?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"It means the practice answers to its patients, not to a head office or shareholders. There are no corporate sales targets, you tend to see the same familiar team who know your history, and treatment is recommended because it is right for you. The practice is privately owned and led by Dr Chris Pritchard."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"How do I get in touch?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"You can call the practice on 01334 475 433, email info@standrewsdentist.co.uk, or fill in the waiting-list form on the page. The team is happy to answer any questions you have about treatments or membership."
+      }
+    }
+  ]
 }
 </script>
 </body>
