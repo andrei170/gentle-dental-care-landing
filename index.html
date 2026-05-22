@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gentle Dental Care | St Andrews' Only Independent Dental Practice</title>
+<meta name="description" content="Gentle Dental Care is St Andrews' only independent, privately owned dental practice. Led by Dr Chris Pritchard since 2010, offering cosmetic dentistry, dental implants, clear aligners and a practice membership plan on South Street.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#5b95c9;        /* deepened brand primary for contrast on white */
+    --blue-soft:#82b2dd;   /* live-site primary */
+    --teal:#5cb4cd;        /* live-site secondary */
+    --blue-deep:#2f5d86;   /* dark accent for headings/text on light */
+    --foot:#3a607f;
+    --ink:#1c2733;
+    --slate:#54616e;
+    --line:#e3eaf1;
+    --wash:#f4f8fc;
+    --wash2:#eaf2f9;
+    --white:#ffffff;
+    --shadow:0 14px 40px rgba(47,93,134,.10);
+    --shadow-sm:0 4px 16px rgba(47,93,134,.08);
+    --r:18px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:var(--ink);line-height:1.65;background:var(--white);-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.serif{font-family:'Fraunces',Georgia,serif;font-weight:500;line-height:1.12;letter-spacing:-.01em}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+  .eyebrow{font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);margin-bottom:14px}
+
+  /* NAV */
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.93);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .brand{display:flex;align-items:baseline;gap:2px;font-family:'Fraunces',serif;font-size:1.34rem;font-weight:600;color:var(--blue-deep);letter-spacing:-.02em}
+  .brand b{color:var(--blue);font-weight:600}
+  .brand .sub{display:block;font-family:'Inter',sans-serif;font-size:.6rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--slate);margin-top:2px}
+  .navlinks{display:flex;align-items:center;gap:30px}
+  .navlinks a{font-size:.92rem;font-weight:500;color:var(--slate);transition:color .2s}
+  .navlinks a:hover{color:var(--blue-deep)}
+  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-weight:600;font-size:.92rem;padding:12px 22px;border-radius:999px;transition:transform .2s,box-shadow .2s,background .2s;border:none;cursor:pointer}
+  .btn:hover{background:var(--blue-deep);transform:translateY(-1px);box-shadow:var(--shadow-sm)}
+  .btn-ghost{background:transparent;color:var(--blue-deep);border:1.5px solid var(--line)}
+  .btn-ghost:hover{background:var(--wash);border-color:var(--blue-soft);color:var(--blue-deep)}
+  .menu-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:8px}
+  .menu-toggle span{width:24px;height:2px;background:var(--blue-deep);border-radius:2px}
+
+  /* HERO */
+  .hero{position:relative;padding:74px 0 84px;background:linear-gradient(180deg,var(--wash) 0%,#fff 100%);overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:56px;align-items:center}
+  .hero h1{font-size:clamp(2.3rem,4.6vw,3.5rem);color:var(--ink)}
+  .hero h1 em{font-style:italic;color:var(--blue)}
+  .hero p.lede{font-size:1.12rem;color:var(--slate);margin:22px 0 30px;max-width:30em}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+  .badge-row{display:flex;gap:22px;flex-wrap:wrap;margin-top:34px;padding-top:26px;border-top:1px solid var(--line)}
+  .badge{display:flex;align-items:center;gap:10px;font-size:.84rem;font-weight:600;color:var(--blue-deep)}
+  .badge svg{width:20px;height:20px;flex-shrink:0}
+  .hero-media{position:relative}
+  /* image native 2560x1707 = 3:2 */
+  .hero-img{position:relative;aspect-ratio:1201/800;border-radius:24px;overflow:hidden;box-shadow:var(--shadow)}
+  .hero-img img{width:100%;height:100%;object-fit:cover;object-position:center}
+  .hero-tag{position:absolute;left:-18px;bottom:26px;background:#fff;border-radius:14px;padding:16px 20px;box-shadow:var(--shadow);max-width:230px}
+  .hero-tag .n{font-family:'Fraunces',serif;font-size:1.7rem;color:var(--blue);font-weight:600;line-height:1}
+  .hero-tag .l{font-size:.78rem;color:var(--slate);margin-top:4px;line-height:1.4}
+
+  /* TRUST STRIP */
+  .strip{background:var(--blue-deep);color:#fff;padding:18px 0}
+  .strip .wrap{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;text-align:center;font-size:.95rem}
+  .strip svg{width:18px;height:18px;vertical-align:-3px;margin-right:6px}
+  .strip b{font-weight:700}
+
+  /* SECTION SHELL */
+  section.pad{padding:84px 0}
+  .sec-head{max-width:42em;margin:0 auto 52px;text-align:center}
+  .sec-head h2{font-size:clamp(1.9rem,3.4vw,2.6rem);color:var(--ink)}
+  .sec-head p{color:var(--slate);font-size:1.06rem;margin-top:16px}
+
+  /* SERVICES */
+  .services{background:var(--wash)}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .svc{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:30px 26px;transition:transform .25s,box-shadow .25s,border-color .25s}
+  .svc:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--blue-soft)}
+  .svc-ico{width:56px;height:56px;border-radius:14px;background:var(--wash2);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+  .svc-ico svg{width:34px;height:34px}
+  .svc h3{font-size:1.22rem;color:var(--blue-deep);margin-bottom:9px}
+  .svc p{font-size:.95rem;color:var(--slate)}
+
+  /* PRINCIPAL / TEAM */
+  .principal-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:54px;align-items:center}
+  /* native 2000x1332 = 3:2 */
+  .principal-img{aspect-ratio:2000/1332;border-radius:22px;overflow:hidden;box-shadow:var(--shadow)}
+  .principal-img img{width:100%;height:100%;object-fit:cover;object-position:center}
+  .principal h2{font-size:clamp(1.8rem,3vw,2.4rem);color:var(--ink);margin-bottom:6px}
+  .principal .role{font-size:.9rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);margin-bottom:20px}
+  .principal p{color:var(--slate);margin-bottom:16px}
+  .creds{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+  .cred{display:inline-flex;align-items:center;gap:8px;background:var(--wash);border:1px solid var(--line);border-radius:10px;padding:9px 14px;font-size:.86rem;font-weight:600;color:var(--blue-deep)}
+  .cred svg{width:16px;height:16px}
+
+  /* WHY INDEPENDENT */
+  .why{background:var(--blue-deep);color:#fff}
+  .why .sec-head h2{color:#fff}
+  .why .sec-head p{color:#cbe0f1}
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .why-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:var(--r);padding:30px 26px}
+  .why-card .ico{width:50px;height:50px;border-radius:12px;background:rgba(130,178,221,.22);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+  .why-card .ico svg{width:28px;height:28px}
+  .why-card h3{font-size:1.18rem;margin-bottom:8px}
+  .why-card p{color:#cbe0f1;font-size:.95rem}
+
+  /* MEMBERSHIP */
+  .member{background:var(--wash)}
+  .member-card{max-width:760px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:24px;padding:48px 44px;text-align:center;box-shadow:var(--shadow-sm)}
+  .member-card .ico{width:64px;height:64px;margin:0 auto 22px;border-radius:16px;background:var(--wash2);display:flex;align-items:center;justify-content:center}
+  .member-card .ico svg{width:38px;height:38px}
+  .member-card h2{font-size:clamp(1.7rem,2.8vw,2.2rem);color:var(--ink);margin-bottom:14px}
+  .member-card p{color:var(--slate);max-width:40em;margin:0 auto 20px}
+  .member-list{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;text-align:left;max-width:520px;margin:26px auto 0}
+  .member-list li{list-style:none;display:flex;gap:10px;align-items:flex-start;font-size:.94rem;color:var(--ink)}
+  .member-list svg{width:20px;height:20px;flex-shrink:0;margin-top:2px}
+
+  /* REVIEWS */
+  .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .rev{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:30px 26px;box-shadow:var(--shadow-sm)}
+  .stars{display:flex;gap:3px;margin-bottom:14px}
+  .stars svg{width:18px;height:18px;color:#f2a93b}
+  .rev p{color:var(--ink);font-size:.98rem;margin-bottom:18px;font-style:italic}
+  .rev .who{font-size:.86rem;font-weight:600;color:var(--blue-deep)}
+  .rev .who span{display:block;font-weight:400;color:var(--slate);font-size:.8rem;font-style:normal}
+  .rev-note{text-align:center;color:var(--slate);font-size:.82rem;margin-top:26px}
+
+  /* CONTACT */
+  .contact{background:var(--blue-deep);color:#fff}
+  .contact .sec-head h2{color:#fff}
+  .contact .sec-head p{color:#cbe0f1}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+  .info-row{display:flex;gap:16px;align-items:flex-start;padding:20px 0;border-bottom:1px solid rgba(255,255,255,.14)}
+  .info-row:last-child{border-bottom:none}
+  .info-row .ico{width:44px;height:44px;border-radius:12px;background:rgba(130,178,221,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .info-row .ico svg{width:22px;height:22px}
+  .info-row h4{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:#9ec3e2;margin-bottom:4px;font-weight:700}
+  .info-row a,.info-row p{color:#fff;font-size:1.02rem;font-weight:500}
+  .form-card{background:#fff;border-radius:22px;padding:34px;box-shadow:var(--shadow)}
+  .form-card h3{color:var(--blue-deep);font-size:1.3rem;margin-bottom:6px}
+  .form-card .fnote{color:var(--slate);font-size:.86rem;margin-bottom:22px}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-size:.82rem;font-weight:600;color:var(--ink);margin-bottom:6px}
+  .field input,.field textarea,.field select{width:100%;border:1.5px solid var(--line);border-radius:11px;padding:12px 14px;font-family:inherit;font-size:.95rem;color:var(--ink);background:var(--wash)}
+  .field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--blue);background:#fff}
+  .form-card .btn{width:100%;justify-content:center;margin-top:6px}
+  .form-card .wl{background:var(--wash2);border:1px solid var(--line);border-radius:11px;padding:12px 14px;font-size:.83rem;color:var(--slate);margin-bottom:20px}
+
+  /* MAP */
+  .map{aspect-ratio:21/9;border-radius:18px;overflow:hidden;margin-top:24px;border:1px solid rgba(255,255,255,.18)}
+  .map iframe{width:100%;height:100%;border:0;filter:grayscale(.15)}
+
+  /* FOOTER */
+  footer{background:var(--foot);color:#dce8f2;padding:54px 0 30px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:36px}
+  .foot-brand{font-family:'Fraunces',serif;font-size:1.3rem;color:#fff;font-weight:600;margin-bottom:12px}
+  footer p,footer li{font-size:.88rem;color:#c4d6e6;line-height:1.7}
+  footer h5{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:#fff;margin-bottom:14px;font-weight:700}
+  footer ul{list-style:none}
+  footer ul a:hover{color:#fff}
+  .reg{border-top:1px solid rgba(255,255,255,.16);padding-top:24px;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;font-size:.78rem;color:#a9c1d6}
+  .reg a{color:#dce8f2;text-decoration:underline;text-underline-offset:2px}
+  .disclaimer{background:rgba(0,0,0,.18);border-radius:10px;padding:12px 16px;margin-top:18px;font-size:.78rem;color:#bcd0e2;text-align:center}
+
+  @media(max-width:1024px){
+    .hero-grid{grid-template-columns:1fr;gap:40px}
+    .principal-grid{grid-template-columns:1fr;gap:34px}
+    .svc-grid,.why-grid,.rev-grid{grid-template-columns:repeat(2,1fr)}
+    .contact-grid{grid-template-columns:1fr;gap:32px}
+  }
+  @media(max-width:768px){
+    .navlinks{display:none}
+    .menu-toggle{display:flex}
+    section.pad{padding:60px 0}
+    .hero{padding:48px 0 60px}
+    .member-list{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr;gap:28px}
+  }
+  @media(max-width:480px){
+    .svc-grid,.why-grid,.rev-grid{grid-template-columns:1fr}
+    .hero-tag{position:static;margin-top:16px;max-width:none}
+    .reg{flex-direction:column}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="brand" aria-label="Gentle Dental Care home">
+      <span>Gentle<b>Dental</b>Care
+        <span class="sub">St Andrews</span>
+      </span>
+    </a>
+    <nav class="navlinks">
+      <a href="#services">Treatments</a>
+      <a href="#principal">About</a>
+      <a href="#why">Independent</a>
+      <a href="#membership">Membership</a>
+      <a href="#reviews">Patients</a>
+      <a href="#contact" class="btn">Join the Waiting List</a>
+    </nav>
+    <button class="menu-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">St Andrews &middot; Fife &middot; Est. on South Street</div>
+        <h1>St Andrews' only <em>independent</em> dental practice.</h1>
+        <p class="lede">Privately owned, never corporate. Led by Dr Chris Pritchard since 2010, Gentle Dental Care is a small, patient-focused practice in the heart of South Street, built on relationships and doing the right thing.</p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn">Join the Waiting List</a>
+          <a href="#services" class="btn btn-ghost">View Treatments</a>
+        </div>
+        <div class="badge-row">
+          <span class="badge"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2l7 3v6c0 4.4-3 8.3-7 9.5C8 19.3 5 15.4 5 11V5l7-3z" fill="#82b2dd" stroke="#2f5d86" stroke-width="1.3"/><path d="M9 12l2 2 4-4.5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>GDC Regulated</span>
+          <span class="badge"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="9" r="4.4" fill="#82b2dd" stroke="#2f5d86" stroke-width="1.3"/><path d="M7 8.6h10M9.2 11.4l-1 4.6 3.8-1.9 3.8 1.9-1-4.6" stroke="#2f5d86" stroke-width="1.3" stroke-linejoin="round" fill="#aacdeb"/></svg>BDA Good Practice since 2011</span>
+          <span class="badge"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="4" fill="#aacdeb" stroke="#2f5d86" stroke-width="1.3"/><path d="M8 12h8M12 8v8" stroke="#2f5d86" stroke-width="1.6" stroke-linecap="round"/></svg>Private &middot; Membership Plan</span>
+        </div>
+      </div>
+      <div class="hero-media">
+        <div class="hero-img">
+          <img src="https://standrewsdentist.co.uk/idesigndental_med/2024/06/Dent-st-andrew_279-1201x800.jpg" alt="Inside the Gentle Dental Care practice on South Street, St Andrews" width="1201" height="800" loading="eager">
+        </div>
+        <div class="hero-tag">
+          <div class="n">2010</div>
+          <div class="l">Independently led by Dr Chris Pritchard ever since</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <div class="strip">
+    <div class="wrap">
+      <span><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.4-7-10a7 7 0 0114 0c0 5.6-7 10-7 10z" fill="#82b2dd" stroke="#fff" stroke-width="1.2"/><circle cx="12" cy="11" r="2.4" fill="#fff"/></svg>
+      <b>85 South Street, St Andrews KY16 9QW</b> &nbsp;&middot;&nbsp; Independently owned, World Host trained team, preventative care first</span>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="pad services" id="services">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Treatments</div>
+        <h2>Considered, private dentistry for every stage of life</h2>
+        <p>From routine family care to cosmetic work and implants, every treatment is planned around you by the same small team that knows your history.</p>
+      </div>
+      <div class="svc-grid">
+
+        <div class="svc">
+          <div class="svc-ico">
+            <!-- molar duotone -->
+            <svg viewBox="0 0 36 36" fill="none"><path d="M9 6c2.6 0 3.5 1.6 5 1.6S20.4 6 23 6c4 0 6.4 2.8 6.4 7 0 3.3-1.4 5.2-2.2 8.6-.7 3-1 8.4-3.2 8.4-2 0-1.7-5.4-3.4-7.6-.7-.9-2.4-.9-3.1 0-1.7 2.2-1.4 7.6-3.4 7.6-2.2 0-2.5-5.4-3.2-8.4C6.9 18.2 5.6 16.3 5.6 13 5.6 8.8 7 6 9 6z" fill="#aacdeb" stroke="#2f5d86" stroke-width="1.4" stroke-linejoin="round"/><path d="M11 11.5c.9-1 2.6-1 3.4 0" stroke="#2f5d86" stroke-width="1.3" stroke-linecap="round"/></svg>
+          </div>
+          <h3>General &amp; Family</h3>
+          <p>Examinations, hygiene, fillings, crowns, bridges, dentures, root canal and extractions. The everyday care that keeps a family healthy.</p>
+        </div>
+
+        <div class="svc">
+          <div class="svc-ico">
+            <!-- aligner tray duotone -->
+            <svg viewBox="0 0 36 36" fill="none"><path d="M6 13c0-2 1.5-3 4-3 2 0 2.8.8 4 .8h8c1.2 0 2-.8 4-.8 2.5 0 4 1 4 3 0 5-1.5 9-2.6 11.6-.7 1.7-2 2.4-3.4 1.6-1.3-.7-1.4-2.4-2-3.8-.5-1.2-1.4-2-3-2h-1c-1.6 0-2.5.8-3 2-.6 1.4-.7 3.1-2 3.8-1.4.8-2.7.1-3.4-1.6C7.5 22 6 18 6 13z" fill="#9ec9eb" stroke="#2f5d86" stroke-width="1.4" stroke-linejoin="round"/><path d="M10 14h16" stroke="#2f5d86" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="1.4 2.2"/></svg>
+          </div>
+          <h3>Clear Aligners</h3>
+          <p>Discreet teeth-straightening with removable aligner trays, scanned and planned in-practice for a comfortable, low-visibility fit.</p>
+        </div>
+
+        <div class="svc">
+          <div class="svc-ico">
+            <!-- implant screw + crown duotone -->
+            <svg viewBox="0 0 36 36" fill="none"><path d="M12 4c2 0 3 1 6 1s4-1 6-1c2.6 0 4 2 4 4.6 0 2.2-.8 3.6-1.4 5.4-.4 1.3-.7 3-1.8 3-1 0-1-2-1.6-3.4-.4-1-1.2-1.6-2.2-1.6s-1.8.6-2.2 1.6C18.4 18 18.4 20 17 20c-1 0-1.3-1.6-1.8-3-.6-1.7-1.4-3-1.4-5.4C13.8 9 12 8 12 4z" fill="#aacdeb" stroke="#2f5d86" stroke-width="1.4" stroke-linejoin="round" transform="translate(0 -1)"/><path d="M18 18.5v12" stroke="#2f5d86" stroke-width="1.6" stroke-linecap="round"/><path d="M14.6 21h6.8M15.2 24.2h5.6M15.8 27.4h4.4M16.6 30.4h2.8" stroke="#5cb4cd" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Dental Implants</h3>
+          <p>Single, multiple and full-arch implant solutions to replace missing teeth, restoring function and confidence with a fixed result.</p>
+        </div>
+
+        <div class="svc">
+          <div class="svc-ico">
+            <!-- veneer tooth + sparkle duotone -->
+            <svg viewBox="0 0 36 36" fill="none"><path d="M11 6c2 0 2.8 1.2 4 1.2S17.4 6 19 6c3 0 4.8 2 4.8 5.2 0 2.6-1 4-1.6 6.4-.6 2.4-.8 6.4-2.6 6.4-1.5 0-1.3-4-2.6-5.6-.5-.6-1.7-.6-2.2 0C13.5 20 13.7 24 12.2 24c-1.8 0-2-4-2.6-6.4-.6-2.4-1.6-3.8-1.6-6.4C8 8 9.8 6 11 6z" fill="#9ec9eb" stroke="#2f5d86" stroke-width="1.4" stroke-linejoin="round"/><path d="M25.5 7.5l.9 2 2 .9-2 .9-.9 2-.9-2-2-.9 2-.9.9-2z" fill="#5cb4cd" stroke="#2f5d86" stroke-width="1"/></svg>
+          </div>
+          <h3>Cosmetic Dentistry</h3>
+          <p>Composite bonding, veneers, inlays and onlays, Air Flow polishing and teeth whitening, planned for a natural, balanced look.</p>
+        </div>
+
+        <div class="svc">
+          <div class="svc-ico">
+            <!-- smile duotone -->
+            <svg viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="13" fill="#aacdeb" stroke="#2f5d86" stroke-width="1.4"/><path d="M11 19a7 7 0 0014 0z" fill="#fff" stroke="#2f5d86" stroke-width="1.4" stroke-linejoin="round"/><path d="M11 19h14" stroke="#2f5d86" stroke-width="1.2"/><circle cx="13" cy="14" r="1.3" fill="#2f5d86"/><circle cx="23" cy="14" r="1.3" fill="#2f5d86"/></svg>
+          </div>
+          <h3>Teeth Whitening</h3>
+          <p>Professionally supervised whitening to gently brighten your natural shade, with take-home trays fitted to your teeth.</p>
+        </div>
+
+        <div class="svc">
+          <div class="svc-ico">
+            <!-- emergency / urgent duotone -->
+            <svg viewBox="0 0 36 36" fill="none"><path d="M12 4c2 0 2.8 1.4 6 1.4S22 4 24 4c3.4 0 5.4 2.4 5.4 6 0 3-1.2 4.6-2 7.4-.8 2.8-1 8-3 8-1.8 0-1.6-5-3-7-.7-1-2.4-1-3.1 0-1.4 2-1.2 7-3 7-2 0-2.2-5.2-3-8C7.2 14.6 6 13 6 10c0-3.6 2-6 6-6z" fill="#9ec9eb" stroke="#2f5d86" stroke-width="1.4" stroke-linejoin="round"/><path d="M18 10.5v5M18 18.6v.1" stroke="#cf5b3e" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Emergency Care</h3>
+          <p>Pain, breaks and lost fillings handled quickly by a team that already knows you, so urgent problems are seen with priority.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PRINCIPAL -->
+  <section class="pad" id="principal">
+    <div class="wrap principal-grid">
+      <div class="principal-img">
+        <img src="https://standrewsdentist.co.uk/idesigndental_med/2024/06/Dent-st-andrew_106.jpg" alt="The Gentle Dental Care surgery in St Andrews" width="2000" height="1332" loading="lazy">
+      </div>
+      <div class="principal">
+        <div class="eyebrow">The Principal</div>
+        <h2>Dr Chris Pritchard</h2>
+        <div class="role">Principal Dentist &middot; Owner since 2010</div>
+        <p>Chris qualified BDS at the University of Dundee in 1998 and completed postgraduate training at the Edinburgh Dental Institute. He took over the practice in 2010 and has kept it firmly independent ever since.</p>
+        <p>That independence is the point. There are no corporate targets and no head office deciding your treatment. You see the same dentist who knows your history, and care is planned around what is right for you, not a quota.</p>
+        <div class="creds">
+          <span class="cred"><svg viewBox="0 0 24 24" fill="none"><path d="M4 9l8-4 8 4-8 4-8-4z" fill="#aacdeb" stroke="#2f5d86" stroke-width="1.3" stroke-linejoin="round"/><path d="M8 11v4c0 1.4 2 2.4 4 2.4s4-1 4-2.4v-4" stroke="#2f5d86" stroke-width="1.3"/></svg>BDS, Dundee 1998</span>
+          <span class="cred"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" fill="#aacdeb" stroke="#2f5d86" stroke-width="1.3"/><path d="M8.5 12.2l2.4 2.4 4.6-5" stroke="#2f5d86" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Edinburgh Dental Institute</span>
+          <span class="cred"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l6 2.5v5C18 14.6 15.5 18 12 19.5 8.5 18 6 14.6 6 10.5v-5L12 3z" fill="#aacdeb" stroke="#2f5d86" stroke-width="1.3" stroke-linejoin="round"/></svg>GDC registered</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY INDEPENDENT -->
+  <section class="pad why" id="why">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow" style="color:#9ec3e2">Why independent matters</div>
+        <h2>The only practice in St Andrews not answering to a corporate owner</h2>
+        <p>Most high-street dentistry now sits inside large dental groups. Gentle Dental Care does not. Here is what that independence means for you.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="ico"><svg viewBox="0 0 28 28" fill="none"><path d="M14 3l8 3v6c0 5-3.5 9.4-8 11C9.5 21.4 6 17 6 12V6l8-3z" fill="#82b2dd" stroke="#fff" stroke-width="1.3"/><path d="M10 14l2.6 2.6L18 11" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>No corporate targets</h3>
+          <p>Treatment is recommended because it is right for you, not because a regional manager set a sales figure.</p>
+        </div>
+        <div class="why-card">
+          <div class="ico"><svg viewBox="0 0 28 28" fill="none"><circle cx="14" cy="9.5" r="4" fill="#82b2dd" stroke="#fff" stroke-width="1.3"/><path d="M6 23c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          <h3>The same trusted team</h3>
+          <p>You build a relationship with dentists who stay. They know your history and you are not passed around.</p>
+        </div>
+        <div class="why-card">
+          <div class="ico"><svg viewBox="0 0 28 28" fill="none"><path d="M14 4c4 0 6 3 6 6.5 0 2.5-1.2 4-2 6.5-.7 2.2-1 6-3 6s-1.7-4.5-3-6.5c-.6-.9-2.4-.9-3 0-1.3 2-1 6.5-3 6.5s-2.3-3.8-3-6.5C5.2 14.5 4 13 4 10.5 4 7 6 4 10 4c2 0 2.8 1.2 4 1.2S12 4 14 4z" fill="#82b2dd" stroke="#fff" stroke-width="1.3" stroke-linejoin="round" transform="translate(0 -1)"/></svg></div>
+          <h3>Prevention first</h3>
+          <p>A World Host trained team focused on keeping teeth healthy, so you need less invasive work over the long run.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEMBERSHIP -->
+  <section class="pad member" id="membership">
+    <div class="wrap">
+      <div class="member-card">
+        <div class="ico"><svg viewBox="0 0 38 38" fill="none"><rect x="5" y="9" width="28" height="20" rx="4" fill="#aacdeb" stroke="#2f5d86" stroke-width="1.5"/><path d="M5 15h28" stroke="#2f5d86" stroke-width="1.5"/><path d="M10 23h8" stroke="#5cb4cd" stroke-width="2" stroke-linecap="round"/><circle cx="27" cy="23" r="2.2" fill="#5cb4cd"/></svg></div>
+        <h2>The practice membership plan</h2>
+        <p>A range of plans designed to help you spread the cost of routine care across the year, so looking after your teeth fits comfortably into your budget.</p>
+        <ul class="member-list">
+          <li><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" fill="#aacdeb" stroke="#2f5d86" stroke-width="1.3"/><path d="M8 12l2.6 2.6L16 9" stroke="#2f5d86" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Routine examinations included</li>
+          <li><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" fill="#aacdeb" stroke="#2f5d86" stroke-width="1.3"/><path d="M8 12l2.6 2.6L16 9" stroke="#2f5d86" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Regular hygiene appointments</li>
+          <li><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" fill="#aacdeb" stroke="#2f5d86" stroke-width="1.3"/><path d="M8 12l2.6 2.6L16 9" stroke="#2f5d86" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>One predictable monthly cost</li>
+          <li><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" fill="#aacdeb" stroke="#2f5d86" stroke-width="1.3"/><path d="M8 12l2.6 2.6L16 9" stroke="#2f5d86" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Priority access to the team</li>
+        </ul>
+        <div style="margin-top:30px"><a href="#contact" class="btn">Ask about membership</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="pad" id="reviews">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">In patients' words</div>
+        <h2>Cared for, not processed</h2>
+        <p>The themes patients of an independent practice describe most often, gently softened. Replace with your own verified Google reviews before going live.</p>
+      </div>
+      <div class="rev-grid">
+        <div class="rev">
+          <div class="stars">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 17.3 5.8 20.9l1.6-6.8L2.2 8.9l6.9-.6L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 17.3 5.8 20.9l1.6-6.8L2.2 8.9l6.9-.6L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 17.3 5.8 20.9l1.6-6.8L2.2 8.9l6.9-.6L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 17.3 5.8 20.9l1.6-6.8L2.2 8.9l6.9-.6L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 17.3 5.8 20.9l1.6-6.8L2.2 8.9l6.9-.6L12 2z"/></svg>
+          </div>
+          <p>"You actually see the same dentist each time. They remember you, and nothing ever feels rushed."</p>
+          <div class="who">Sample patient theme<span>Routine care</span></div>
+        </div>
+        <div class="rev">
+          <div class="stars">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 17.3 5.8 20.9l1.6-6.8L2.2 8.9l6.9-.6L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 17.3 5.8 20.9l1.6-6.8L2.2 8.9l6.9-.6L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 17.3 5.8 20.9l1.6-6.8L2.2 8.9l6.9-.6L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 17.3 5.8 20.9l1.6-6.8L2.2 8.9l6.9-.6L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 17.3 5.8 20.9l1.6-6.8L2.2 8.9l6.9-.6L12 2z"/></svg>
+          </div>
+          <p>"Calm, friendly and genuinely caring. They explain the options and let you decide without any pressure."</p>
+          <div class="who">Sample patient theme<span>New patient</span></div>
+        </div>
+        <div class="rev">
+          <div class="stars">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 17.3 5.8 20.9l1.6-6.8L2.2 8.9l6.9-.6L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 17.3 5.8 20.9l1.6-6.8L2.2 8.9l6.9-.6L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 17.3 5.8 20.9l1.6-6.8L2.2 8.9l6.9-.6L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 17.3 5.8 20.9l1.6-6.8L2.2 8.9l6.9-.6L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 17.3 5.8 20.9l1.6-6.8L2.2 8.9l6.9-.6L12 2z"/></svg>
+          </div>
+          <p>"Lovely team in a great spot on South Street. Booking is easy and the surgery is spotless."</p>
+          <div class="who">Sample patient theme<span>Hygiene visit</span></div>
+        </div>
+      </div>
+      <p class="rev-note">Illustrative themes for this concept. Connect your live Google Business Profile reviews here before publishing.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="pad contact" id="contact">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow" style="color:#9ec3e2">Get in touch</div>
+        <h2>Join the waiting list</h2>
+        <p>The practice is currently full and is operating a waiting list for new patients. Register your interest below and the team will be in touch when a space opens.</p>
+      </div>
+      <div class="contact-grid">
+        <div>
+          <div class="info-row">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.4-7-10a7 7 0 0114 0c0 5.6-7 10-7 10z" fill="#82b2dd" stroke="#fff" stroke-width="1.2"/><circle cx="12" cy="11" r="2.4" fill="#fff"/></svg></div>
+            <div><h4>Visit</h4><p>85 South Street, St Andrews,<br>Fife, KY16 9QW</p></div>
+          </div>
+          <div class="info-row">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 005 5L19 13l5 2v3c0 1.1-.9 2-2 2A15 15 0 013 6c0-1.1.9-2 2-2z" fill="#82b2dd" stroke="#fff" stroke-width="1.1" stroke-linejoin="round"/></svg></div>
+            <div><h4>Call</h4><a href="tel:01334475433">01334 475 433</a></div>
+          </div>
+          <div class="info-row">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2.5" fill="#82b2dd" stroke="#fff" stroke-width="1.1"/><path d="M4 7l8 5.5L20 7" stroke="#fff" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><h4>Email</h4><a href="mailto:info@standrewsdentist.co.uk">info@standrewsdentist.co.uk</a></div>
+          </div>
+          <div class="info-row">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" fill="#82b2dd" stroke="#fff" stroke-width="1.1"/><path d="M12 7.5V12l3 2" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><h4>Opening</h4><p>Mon to Fri, by appointment</p></div>
+          </div>
+          <div class="map">
+            <iframe title="Map to 85 South Street, St Andrews KY16 9QW" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=85%20South%20Street%2C%20St%20Andrews%20KY16%209QW&output=embed"></iframe>
+          </div>
+        </div>
+        <div class="form-card">
+          <h3>Register your interest</h3>
+          <p class="fnote">A quick note about who you are and the care you are looking for.</p>
+          <div class="wl">The practice is not currently taking on new patients. This form adds you to the waiting list, it does not book an appointment.</div>
+          <form onsubmit="return false">
+            <div class="field"><label for="n">Full name</label><input id="n" type="text" placeholder="Your name"></div>
+            <div class="field"><label for="e">Email</label><input id="e" type="email" placeholder="you@email.com"></div>
+            <div class="field"><label for="p">Phone</label><input id="p" type="tel" placeholder="01334 000 000"></div>
+            <div class="field"><label for="t">What are you looking for?</label>
+              <select id="t">
+                <option>Routine and family care</option>
+                <option>Cosmetic dentistry</option>
+                <option>Dental implants</option>
+                <option>Clear aligners</option>
+                <option>Membership plan</option>
+              </select>
+            </div>
+            <div class="field"><label for="m">Message</label><textarea id="m" rows="3" placeholder="Anything you'd like the team to know"></textarea></div>
+            <button class="btn" type="submit">Join the waiting list</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">Gentle Dental Care</div>
+        <p>St Andrews' only independent, privately owned dental practice. Patient-focused care on South Street, led by Dr Chris Pritchard since 2010.</p>
+      </div>
+      <div>
+        <h5>Treatments</h5>
+        <ul>
+          <li><a href="#services">General &amp; family</a></li>
+          <li><a href="#services">Cosmetic dentistry</a></li>
+          <li><a href="#services">Dental implants</a></li>
+          <li><a href="#services">Clear aligners</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Practice</h5>
+        <ul>
+          <li><a href="#principal">About Dr Pritchard</a></li>
+          <li><a href="#why">Why independent</a></li>
+          <li><a href="#membership">Membership plan</a></li>
+          <li><a href="#contact">Waiting list</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="reg">
+      <div>Regulated by the General Dental Council (GDC). Advertising complies with the ASA CAP Code. The practice is regulated in Scotland by Healthcare Improvement Scotland. BDA Good Practice scheme member since 2011.</div>
+      <div>Concept by <a href="https://andrei170.github.io/ag1/#services" target="_blank" rel="noopener">AG Consulting</a></div>
+    </div>
+    <div class="disclaimer">This is a demo concept created by AG Consulting for illustration only. It is not the live Gentle Dental Care website and is not affiliated with or endorsed by the practice.</div>
+  </div>
+</footer>
+
+<script>
+  document.querySelector('.menu-toggle').addEventListener('click',function(){
+    var n=document.querySelector('.navlinks');
+    var open=n.style.display==='flex';
+    n.style.display=open?'none':'flex';
+    if(!open){n.style.position='absolute';n.style.top='74px';n.style.right='24px';n.style.flexDirection='column';n.style.background='#fff';n.style.padding='18px 22px';n.style.borderRadius='14px';n.style.boxShadow='0 14px 40px rgba(47,93,134,.16)';n.style.gap='14px';}
+  });
+  document.querySelectorAll('.navlinks a').forEach(function(a){a.addEventListener('click',function(){if(window.innerWidth<=768){document.querySelector('.navlinks').style.display='none';}});});
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":["Dentist","MedicalBusiness","LocalBusiness"],
+  "name":"Gentle Dental Care",
+  "description":"St Andrews' only independent, privately owned dental practice, offering cosmetic dentistry, dental implants, clear aligners, general and family dentistry and a practice membership plan.",
+  "url":"https://standrewsdentist.co.uk/",
+  "telephone":"+441334475433",
+  "email":"info@standrewsdentist.co.uk",
+  "priceRange":"$$",
+  "image":"https://standrewsdentist.co.uk/idesigndental_med/2024/06/Dent-st-andrew_279-1201x800.jpg",
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"85 South Street",
+    "addressLocality":"St Andrews",
+    "addressRegion":"Fife",
+    "postalCode":"KY16 9QW",
+    "addressCountry":"GB"
+  },
+  "geo":{"@type":"GeoCoordinates","latitude":56.3398,"longitude":-2.7967},
+  "areaServed":{"@type":"City","name":"St Andrews"},
+  "medicalSpecialty":"Dentistry",
+  "availableService":[
+    {"@type":"MedicalProcedure","name":"Cosmetic Dentistry"},
+    {"@type":"MedicalProcedure","name":"Dental Implants"},
+    {"@type":"MedicalProcedure","name":"Clear Aligners"},
+    {"@type":"MedicalProcedure","name":"General and Family Dentistry"},
+    {"@type":"MedicalProcedure","name":"Teeth Whitening"},
+    {"@type":"MedicalProcedure","name":"Emergency Dental Care"}
+  ],
+  "founder":{
+    "@type":"Person",
+    "name":"Dr Chris Pritchard",
+    "jobTitle":"Principal Dentist",
+    "alumniOf":["University of Dundee","Edinburgh Dental Institute"]
+  },
+  "employee":{
+    "@type":"Person",
+    "name":"Dr Chris Pritchard",
+    "jobTitle":"Principal Dentist"
+  }
+}
+</script>
+</body>
+</html>
